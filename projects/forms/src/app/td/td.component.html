@@ -1,0 +1,26 @@
+<form class="card" #myfrm="ngForm" (ngSubmit)="mysub(myfrm)">
+    <div>
+        <h5 class="text-muted">Template Driven forms</h5>
+    </div>
+<div>
+    <input type="text" placeholder="username" name="usnm" ngModel required #usnm="ngModel"> 
+    <p *ngIf="!usnm.valid">Enter User Name</p>
+</div>
+<div>
+    <input type="text" placeholder="Email" name="em" ngModel required  #em="ngModel" [pattern]="eml"><!--[pattern]="eml" #eml="ngModel"-->
+    <p *ngIf="em.errors?.required"> Enter Email</p>
+    <p *ngIf="em.errors?.pattern">Enter Valid Email</p>
+</div>
+<div>
+    <input type="text" placeholder="Password" name="pass" ngModel required #pass="ngModel"><!--#pass="ngModel"-->
+    <p *ngIf="!pass.valid">Enter Password</p>
+</div>
+<div>
+    <input type="text" placeholder="ConformPassword">
+    <p>Enter Confirm Password</p>
+</div>
+
+<div>
+    <input [disabled]="!myfrm.valid" type="submit" value="submit" class="btn btn-info">
+</div>
+</form>
