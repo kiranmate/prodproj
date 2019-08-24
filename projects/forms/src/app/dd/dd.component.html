@@ -5,6 +5,7 @@
     </div>
 <div>
     <input type="text" placeholder="username" formControlName="usNm" name="usnm"> 
+
     <p *ngIf="frmgroup.controls.usNm.errors?.required">Enter User Name</p>
     <p *ngIf="!frmgroup.controls.usNm.errors?.isStartWithA"> User Name should start from a or A</p>
 </div>
@@ -12,7 +13,6 @@
     <input type="text" placeholder="Email"  formControlName="em" name="em">
     <p *ngIf="frmgroup.controls.em.errors?.required"> Enter Email</p>
     <p *ngIf="frmgroup.controls.em.errors?.email">Enter Valid Email</p>
-
     <p *ngIf="frmgroup.controls.em.errors?.taken"> Email address is already taken</p>
 </div>
 <div>

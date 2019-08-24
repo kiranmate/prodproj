@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+<div class="col-md-12">
+<p class="text-muted">
+  Pipe
+</p>
+
+</div>
+
+<div class="col-md-12">
+  <p>Name is {{name|uppercase}}</p>
+  <p>exp  is {{exp|number:"3.3-4"}}</p>
+
+  <p>Date  is {{date|date:"dd MMM yyyy"}}</p>
+
+  <p>
+    Chaining {{name|slice:0:6|uppercase}}
+  </p>
+  
+<p>json pipe{{obj|json}} </p>
+ <p> Name is {{name|hyphen:2}}</p>
+
+
+</div>
+
+  </div>
+<div class="row">
+    <input type="text" #cmp placeholder="company Name">
+    <input type="text" #cst placeholder="cost">
+    <input type="text" #os placeholder="os">
+    <input type="button" value="Add" class="btn btn-info" (click)="newMobile(cmp.value, cst.value,os.value)">
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+    
+      <input type="text" [(ngModel)]="cmNm">
+      
+      
+    </div>
+  </div>
+<div class="row">
+  <div class="col-md-12">
+  <ol>
+      <li *ngFor="let mobile of (mobile |filter:cmNm)">{{mobile?.company}}</li>
+  </ol>
+
+  </div>
+</div>
+
+</div>
+
+
+
+
+<router-outlet></router-outlet>
